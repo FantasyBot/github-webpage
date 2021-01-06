@@ -1,0 +1,194 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color: #d6c9c9;
+}
+
+img{
+  width: 120px;
+  height: 120px;
+  border-radius: 2px;
+}
+
+button{
+  width: 80px;
+  height: 33px;
+  font-size: 1.1rem;
+  background: transparent;
+  border: 1.6px solid #dfd9d9;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 10px;
+  position: fixed;
+  top: 3%;
+  right: 2%;
+  transform: translate(-3%, -2%);
+  outline: none;
+  
+}
+button a{
+  text-decoration: none;
+  color: #d6c9c9;
+  transition: .2s;
+}
+button a:hover{
+  color: tomato;
+  font-size: 1.2rem;
+}
+button a:active{
+  color: rgb(255, 0, 0);
+}
+
+.notFnd{
+  position: unset;
+}
+
+
+.container{
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('img/simp.jpg')center/cover no-repeat;
+  background-attachment: fixed;
+  min-height: 110vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnDiv{
+  background: transparent;
+  overflow: hidden;
+}
+
+.btnDiv button{
+  transform: translateY(-200%);
+  display: inline-block;
+}
+
+.container .output{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  margin: 120px 0 60px 0;
+  font-size: 16px;
+}
+
+.usrNot{
+  margin-bottom: 70px;
+}
+.usrNot p{ 
+  margin-bottom: 10px;
+}
+
+
+.output img{
+  width: 170px;
+  height: 160px;
+}
+.wrap2 a{
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #fd2b2b;
+}
+.wrap2 a:hover{
+  text-decoration: underline;
+}
+
+.repositories{
+  list-style: none;
+}
+
+.repositories li{ 
+  padding: 2px 0;
+}
+
+
+#organisations{
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+}
+
+
+.orgWrap{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.orgWrap a{
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #fd2b2b;
+  transition: .2s;
+}
+
+.orgWrap a:hover{
+  color: red;
+  text-decoration: underline;
+
+}
+
+
+
+.orgNot{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 20px;
+  
+}
+
+
+@media(max-width: 530px) {
+  .btn{
+    width: 50px;
+    height: 25px;
+    font-size: 0.7rem;
+  }
+  .btn a:hover{
+    font-size: 0.8rem;
+  }
+
+  .output img{
+    width: 100px;
+    height: 100px;
+  }
+  .wrap2 {
+    font-size: 0.7rem;
+  }
+  .wrap2 a{ 
+    font-size: 1rem;
+  }
+
+  .orgs{
+    font-size: 1rem;
+  }
+  .shown img{
+   width: 60px;
+   height: 60px;
+  }
+  #organisations{
+    width: 45%;
+  }
+  .shown a{
+    font-size: 0.8rem;
+  }
+
+}
+
+@media(max-width: 350px) {
+  .shown img{
+    width: 45px;
+    height: 45px;
+   }
+   .shown a{
+    font-size: 0.6rem;
+  }
+}

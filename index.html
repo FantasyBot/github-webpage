@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/daedcd28da.js" crossorigin="anonymous"></script>
+  <title>github finder</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container">
+      <div class="section1">
+        <div class="popular">
+          <h1>The most popular github users</h1>
+          <i class="fas fa-th-large" id="simb"></i>
+        </div>
+
+        <div class="reposs" id="p-user-n">
+        <!-- JS content -->
+        </div>
+      </div>   
+
+    <!-- section break -->
+    <div class="section2">
+        <form class="search">
+         <div class="textWrap"> 
+            <h2 class="search-head">Search Github Users</h2>
+            <p class="search-p">Enter a username to get a user's profile info</p>
+         </div> 
+          <div class="input-wrap">
+           <input type="text" id="search-user" class="search-input" placeholder="Enter Github Username">
+           <button class="btn" id="button"><a href="userFolder/user.html">Submit</a></button>
+          </div>
+        </form> <br>
+        
+        <div id="profile">
+        <!-- JS content -->
+        </div>
+    </div>    
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
+  <script src="main.js"></script>
+</body>
+</html>

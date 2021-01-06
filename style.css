@@ -1,0 +1,307 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container{
+  min-height: 120vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('images/simply.jpg')center/cover no-repeat;
+  background-attachment: fixed;
+
+}
+
+
+.popular {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0 50px 0;
+}
+.popular h1{
+  color: #f8f9ff;
+
+   
+} 
+
+.popular i{ 
+  margin-left: 100px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #eff1fd;
+  transition: .4s;
+}
+.popular i:hover{
+  transform: scale(1.25);
+} 
+.popular i:active{
+ color: #1a1b1f;
+}
+
+
+.reposs{
+  display: flex;
+  /* flex-wrap: wrap; */
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.reposs .divWrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding: 10px 0;
+}
+
+/* for JS */
+.addClassUsers{
+  flex-wrap: wrap;
+}
+
+.reposs .wrap{
+  padding: 0 20px 0 10px;
+  
+}
+
+.reposs .divWrap img{ 
+  width: 120px;
+  height: 120px;
+  border-radius: 2px;
+}
+.wrap2{
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 120px;
+  color: #d6dbf8;
+}
+.repositories{
+  list-style: none;
+}
+
+
+.wrap2 a{
+  color: #d38c49;
+  text-decoration: none;
+  cursor: pointer;
+
+}
+.wrap2 a:hover{ 
+  text-decoration:underline;
+  
+}
+
+
+
+
+/*    B   R   E   A    K */
+
+
+
+.section2{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.profile{
+  padding: 20px;
+  font-size: 1.2rem;
+  
+}
+
+
+.endTag {
+  color: #dfdfe7;
+  text-decoration: none;
+  position: relative;
+  left: 36%;
+  transform: translateX(-40%);
+}
+
+.textWrap{
+  display: flex;
+  flex-direction: column;
+  color: #dce0f7;
+  position: relative;
+  left: 36%;
+  transform: translateX(-40%);
+
+}
+
+.search h2{
+  font-size: 2rem;
+  padding: 30px 0px 10px 0;
+}
+
+.search p{
+  font-size: 1.2rem;
+  padding: 10px;
+}
+
+.search input{
+  width: 500px;
+  height: 40px;
+  padding: 15px;
+  margin-right: 40px;
+  outline: none;
+  font-size: 20px;
+  background: lightgray;
+  border: none;
+  border-radius: 5px;
+
+}
+.search input::placeholder{
+  color: #404146;
+}
+
+
+.search button{
+  border: none;
+  height: 40px;
+  width: 100px;
+  background: lightgray;
+  outline: none;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: .3s;
+ }
+.search button:hover{
+  transform: scale(1.1);
+}
+.search button:active{
+  background: #000000;
+}
+
+ .search a{
+   text-decoration: none;
+   color: #444447;
+ }
+
+ .input-wrap{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+
+ @media (max-width: 1340px) {
+
+  .divWrap{
+    display: flex;
+    flex-direction: column;
+  }
+  .section2{
+    margin-bottom: 100px;
+  }
+  .reposs .wrap{
+    padding: 0;
+    
+  }
+ }
+
+
+ @media (max-width: 840px) {
+   .popular h1, .popular i{
+     font-size: 1.2rem
+  }
+  .popular i{ 
+    margin-left: 30px;
+  }
+  .reposs{
+    width: 42%;
+
+  }
+
+ .reposs .divWrap img{ 
+   width: 80px;
+   height: 80px;
+  }
+   .wrap2{
+     font-size: 0.7rem;
+   } 
+   .reposs .wrap{
+    padding: 0;
+    
+  }
+
+   .input-wrap{
+     display: flex;
+     flex-direction: column;
+   }
+   .input-wrap button{
+    margin-top: 20px;
+   }
+
+  .textWrap h2{
+    font-size: 1.1rem;
+  }
+  .textWrap p {
+    font-size: 0.8rem;
+  }
+  .endTag {
+    font-size: 0.8rem;
+    left: 36%;
+    transform: translateX(-36%);
+  }
+  .search input{
+    width: 300px;
+    height: 20px;
+    font-size: 0.7rem;
+    margin: 0;
+  }
+    
+  .textWrap{
+    left: 50%;
+    transform: translateX(-50%);
+
+  }
+
+  .search button{
+    height: 22px;
+    width: 50px;
+    font-size: 0.7rem;
+  
+   }
+
+ 
+}
+
+
+@media (max-width: 600px) {
+  .reposs{
+    display: flex;
+    flex-direction: column;
+  }
+  .divWrap{
+    width: 100%;
+  }
+
+  .popular i{ 
+    display: none;
+  }
+
+  .section2{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 30px 0;
+  }
+  .search input{
+    width: 250px;
+  }
+
+}
