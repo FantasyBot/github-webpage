@@ -79,7 +79,7 @@ const orgs =  document.getElementById('organisations');
       outputUser.innerHTML = `
        <div class="usrNot">
              <p>User Not Found</p>
-             <button class="notFnd"> <a href="/index.html">try again</a></button>
+             <button class="notFnd"> <a href="https://fantasybot.github.io/github-webpage/">try again</a></button>
        </div>      
              `; 
                              
