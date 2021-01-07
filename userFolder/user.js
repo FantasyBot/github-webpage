@@ -32,7 +32,26 @@ const orgs =  document.getElementById('organisations');
        }       
        
        else if(sult.length = 2) {
-              
+        if(sult[1] === undefined) {
+          outputUser.innerHTML = `
+          <div class="divWrap"> 
+            <div class="wrap">  
+              <img src="${sult[0].owner.avatar_url}" alt="avatar">
+            </div>  
+            <div class="wrap2">
+              <a href="${sult[0].owner.html_url}" target="_blank">${sult[0].owner.login}</a>
+              <p>Type: ${sult[0].owner.type}</p>
+    
+              <ol class="repositories"> 
+                <li>${sult[0].name}</li>
+                <li>-</li>
+                <li>-</li>
+              </ol>
+            </div> 
+          </div>  
+           `
+        }
+        else{
         outputUser.innerHTML = `
         <div class="divWrap"> 
           <div class="wrap">  
@@ -50,24 +69,14 @@ const orgs =  document.getElementById('organisations');
           </div> 
         </div>  
          `
-       }      
+         }
+       }   
        
-       else if (sult.length = 1) {
-              
+       else { 
         outputUser.innerHTML = `
         <div class="divWrap"> 
-          <div class="wrap">  
-            <img src="${sult[0].owner.avatar_url}" alt="avatar">
-          </div>  
           <div class="wrap2">
-            <a href="${sult[0].owner.html_url}" target="_blank">${sult[0].owner.login}</a>
-            <p>Type: ${sult[0].owner.type}</p>
-  
-            <ol class="repositories"> 
-              <li>${sult[0].name}</li>
-              <li>-</li>
-              <li>-</li>
-            </ol>
+            <p>Type: Github user is not activated(no repos)</p>
           </div> 
         </div>  
          `
