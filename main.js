@@ -6,7 +6,6 @@ const output = document.getElementById('p-user-n');
   const result = await response.json();
    
   let smt = result.items;
-  // 996icu
    for(var i = 0; i < smt.length; i++) {  
     if(i === 1) {
       async function getUrl() {
@@ -14,7 +13,7 @@ const output = document.getElementById('p-user-n');
       const sponse = await fetch(`https://api.github.com/users/${smt[i].owner.login}/repos`);
       const sult = await sponse.json();
               
-       output.innerHTML = `
+       output.innerHTML += `
         <div class="divWrap" id="togle"> 
           <div class="wrap">  
             <img src="${sult[0].owner.avatar_url}" alt="avatar">
@@ -78,7 +77,6 @@ const output = document.getElementById('p-user-n');
   let colectArr = [];
 
    //save input names into localstorage
-   
    const saveEl = (e) => {
     e.preventDefault();
      if(document.getElementById('search-user').value === "") {
@@ -113,8 +111,6 @@ const output = document.getElementById('p-user-n');
     //  }
   };
 
-
-     //       B   R   E   A    K 
 
   
  document.addEventListener('DOMContentLoaded', () => {
