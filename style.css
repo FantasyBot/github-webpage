@@ -194,6 +194,15 @@
    justify-content: center;
    align-items: center;
  }
+ .far{
+ color: #65c2b2;
+ font-size: 1.1rem;
+ }
+ .fa-sitemap{
+   color: #a4c25d;
+   font-size: 0.9rem;
+ }
+
 
 
  @media (max-width: 1340px) {
@@ -209,6 +218,12 @@
     padding: 0;
     
   }
+  .far{
+    font-size: 0.8rem;
+    }
+    .fa-sitemap{
+      font-size: 0.6rem;
+    }
  }
 
 
@@ -279,7 +294,7 @@
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   .popular h1{
     font-size: 1rem;
   } 
@@ -325,6 +340,12 @@
     margin-top: 10px;
   
    }
+    .far{
+    font-size: 0.5rem;
+    }
+    .fa-sitemap{
+      font-size: 0.4rem;
+    }
 
 }
 

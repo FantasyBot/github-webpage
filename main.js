@@ -20,8 +20,8 @@ const output = document.getElementById('p-user-n');
           </div>  
           <div class="wrap2">
             <h4><a href="${sult[0].owner.html_url}" target="_blank">${sult[0].owner.login}</a></h4>
-            <p>Type: ${sult[0].owner.type}</p>
-            <h4>First three ropo names:</h4>
+            <p><i class="far fa-arrow-alt-circle-right"></i> Type: ${sult[0].owner.type}</p>
+            <h4><i class="fas fa-sitemap"></i> First three ropo names:</h4>
             <ol class="repositories"> 
               <li>${sult[0].name}</li>
               <li>${sult[1].name}</li>
@@ -35,7 +35,6 @@ const output = document.getElementById('p-user-n');
             .catch(error => {console.log(error);}); 
             
     }
-    //api access delay
     else{
       async function getSUrl() {
          
@@ -49,8 +48,8 @@ const output = document.getElementById('p-user-n');
        </div>  
        <div class="wrap2">
          <h4><a href="${sult[0].owner.html_url}" target="_blank">${sult[0].owner.login}</a></h4>
-         <p>Type: ${sult[0].owner.type}</p>
-         <h4>First three ropo names:</h4>
+         <p><i class="far fa-arrow-alt-circle-right"></i> Type: ${sult[0].owner.type}</p>
+         <h4><i class="fas fa-sitemap"></i> First three ropo names:</h4>
          <ol class="repositories"> 
            <li>${sult[0].name}</li>
            <li>${sult[1].name}</li>
