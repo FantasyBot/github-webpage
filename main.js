@@ -139,6 +139,6 @@ iSimbol.addEventListener('click', function() {
 const tl = gsap.timeline({defaults: { ease: "power1.out"} });
 
 tl.fromTo('.popular', {opacity: 0}, {opacity: 1, duration: 2 });
-tl.fromTo('.reposs', {opacity: 0}, {opacity: 1, duration: 1 }, '-=1.2');
+tl.fromTo('.reposs', {opacity: 0}, {opacity: 1, duration: 2 }, '-=1.2');
 tl.fromTo('.section2', {opacity: 0}, {opacity: 1, duration: 1 }, '-=1');
 
