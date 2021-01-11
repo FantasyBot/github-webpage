@@ -144,6 +144,14 @@ button a:active{
   margin-top: 20px;
   
 }
+.far{
+  color: #65c2b2;
+  font-size: 1.1rem;
+  }
+  .fa-sitemap{
+    color: #a4c25d;
+    font-size: 0.9rem;
+  }
 
 
 @media(max-width: 530px) {
@@ -180,6 +188,12 @@ button a:active{
   .shown a{
     font-size: 0.8rem;
   }
+  .far{
+    font-size: 0.8rem;
+    }
+    .fa-sitemap{
+      font-size: 0.6rem;
+    }
 
 }
 
