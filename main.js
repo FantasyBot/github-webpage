@@ -1,4 +1,5 @@
 const output = document.getElementById('p-user-n');  
+let colectArr = [];
 
   const getRepos = async function () {
   //get most rated repositories in github
@@ -12,24 +13,30 @@ const output = document.getElementById('p-user-n');
          
       const sponse = await fetch(`https://api.github.com/users/${smt[i].owner.login}/repos`);
       const sult = await sponse.json();
-              
+      
+      //sort array oldest to newest
+      sult.sort(function(a, b) {
+        var dateA = new Date(a.created_at), dateB = new Date(b.created_at);
+        return dateA - dateB;
+      });
+
        output.innerHTML += `
         <div class="divWrap" id="togle"> 
           <div class="wrap">  
             <img src="${sult[0].owner.avatar_url}" alt="avatar">
           </div>  
           <div class="wrap2">
-            <h4><a href="${sult[0].owner.html_url}" target="_blank">${sult[0].owner.login}</a></h4>
-            <p><i class="far fa-arrow-alt-circle-right"></i> Type: ${sult[0].owner.type}</p>
-            <h4><i class="fas fa-sitemap"></i> First three ropo names:</h4>
+            <h4><a class="userName">${sult[0].owner.login}</a></h4>
+            <p>Type: ${sult[0].owner.type}</p>
+            <h4>First three ropo names:</h4>
             <ol class="repositories"> 
-              <li>${sult[0].name}</li>
-              <li>${sult[1].name}</li>
+              <li>.${sult[0].name}</li>
+              <li>.${sult[1].name}</li>
               <li>-</li>
             </ol>
           </div> 
         </div>  
-         `               
+         `;             
        } 
             getUrl()
             .catch(error => {console.log(error);}); 
@@ -41,40 +48,60 @@ const output = document.getElementById('p-user-n');
         const sponsee = await fetch(`https://api.github.com/users/${smt[i].owner.login}/repos`);
         const sult = await sponsee.json();
       
+        //sort array oldest to newest
+       sult.sort(function(a, b) {
+        var dateA = new Date(a.created_at), dateB = new Date(b.created_at);
+        return dateA - dateB;
+       });
+
        output.innerHTML += ` 
        <div class="divWrap" id="togle"> 
        <div class="wrap">  
          <img src="${sult[0].owner.avatar_url}" alt="avatar">
        </div>  
        <div class="wrap2">
-         <h4><a href="${sult[0].owner.html_url}" target="_blank">${sult[0].owner.login}</a></h4>
-         <p><i class="far fa-arrow-alt-circle-right"></i> Type: ${sult[0].owner.type}</p>
-         <h4><i class="fas fa-sitemap"></i> First three ropo names:</h4>
+         <h4><a class="userName">${sult[0].owner.login}</a></h4>
+         <p>Type: ${sult[0].owner.type}</p>
+         <h4>First three ropo names:</h4>
          <ol class="repositories"> 
-           <li>${sult[0].name}</li>
-           <li>${sult[1].name}</li>
-           <li>${sult[2].name}</li>
+           <li>.${sult[0].name}</li>
+           <li>.${sult[1].name}</li>
+           <li>.${sult[2].name}</li>
          </ol>
        </div> 
      </div>
-       `
+       `;
+
+       let names = document.querySelectorAll('.userName');
+       names.forEach(item => {
+         item.addEventListener('click', function() {
+            let message = {
+              Name: this.innerText
+            }
+           colectArr.push(message);
+           localStorage.setItem('myStore', JSON.stringify(colectArr));
+           location.href = 'userFolder/user.html';
+         });
+       });
+
       }    
       getSUrl()
       .catch(error => {console.log(error);}); 
     }
   }
-   
+
 }
 
 
   
      //       B   R   E   A    K 
+  
+
 
 
 
   const historiNames = document.getElementById('profile');
-  let colectArr = [];
-
+  
    //save input names into localstorage
    const saveEl = (e) => {
     e.preventDefault();
@@ -100,14 +127,7 @@ const output = document.getElementById('p-user-n');
   const getEll = () => {
     
    let objStorage = JSON.parse(localStorage.getItem('myStore'));
-  
-   historiNames.innerHTML = `<p class="endTag">Last Search: ${objStorage[0].Name}</p>`;
-    //   historiNames.innerHTML = '';
-    //   for(var i = 0; i < objStorage.length; i++) { 
-    //    historiNames.innerHTML += `
-    //    <p>${objStorage[objStorage.length - i - 1].Name}</p>
-    //    `;
-    //  }
+   historiNames.innerHTML = `<p class="endTag">Last viewed: ${objStorage[0].Name}</p>`;
   };
 
 
@@ -116,7 +136,6 @@ const output = document.getElementById('p-user-n');
    getRepos();
    document.getElementById('button').addEventListener('click', saveEl);
    document.querySelector('body').addEventListener("mouseover", getEll);
-
   });
    
 

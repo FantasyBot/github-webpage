@@ -4,14 +4,19 @@ let userLocal = JSON.parse(localStorage.getItem('myStore'));
 const outputUser =  document.getElementById('outputt');
 const orgs =  document.getElementById('organisations');
 
-  //display enterd user's info
+  //display typed user's info
   async function getUrll() {
          
    const sponse = await fetch(`https://api.github.com/users/${userLocal[0].Name}/repos`);
    const sult = await sponse.json();
     
       if(sult.length > 2) {
-              
+          //sort array oldest to newest
+          sult.sort(function(a, b) {
+            var dateA = new Date(a.created_at), dateB = new Date(b.created_at);
+            return dateA - dateB;
+          });
+
         outputUser.innerHTML = `
         <div class="divWrap"> 
           <div class="wrap">  
@@ -19,16 +24,16 @@ const orgs =  document.getElementById('organisations');
           </div>  
           <div class="wrap2">
             <a href="${sult[0].owner.html_url}" target="_blank">${sult[0].owner.login}</a>
-            <p><i class="far fa-arrow-alt-circle-right"></i>Type: ${sult[0].owner.type}</p>
-            <h4><i class="fas fa-sitemap"></i>First three ropo names:</h4>
+            <p>Type: ${sult[0].owner.type}</p>
+            <h4>First three ropo names:</h4>
             <ol class="repositories"> 
-              <li>${sult[0].name}</li>
-              <li>${sult[1].name}</li>
-              <li>${sult[2].name}</li>
+              <li>.${sult[0].name}</li>
+              <li>.${sult[1].name}</li>
+              <li>.${sult[2].name}</li>
             </ol>
           </div> 
         </div>  
-         `
+         `;
        }       
        
        else if(sult.length = 2) {
@@ -41,15 +46,15 @@ const orgs =  document.getElementById('organisations');
             <div class="wrap2">
               <a href="${sult[0].owner.html_url}" target="_blank">${sult[0].owner.login}</a>
               <p>Type: ${sult[0].owner.type}</p>
-    
+              <h4>First three ropo names:</h4>
               <ol class="repositories"> 
-                <li>${sult[0].name}</li>
+                <li>.${sult[0].name}</li>
                 <li>-</li>
                 <li>-</li>
               </ol>
             </div> 
           </div>  
-           `
+           `;
         }
         else{
         outputUser.innerHTML = `
@@ -60,15 +65,15 @@ const orgs =  document.getElementById('organisations');
           <div class="wrap2">
             <a href="${sult[0].owner.html_url}" target="_blank">${sult[0].owner.login}</a>
             <p>Type: ${sult[0].owner.type}</p>
-  
+            <h4>First three ropo names:</h4>
             <ol class="repositories"> 
-              <li>${sult[0].name}</li>
-              <li>${sult[1].name}</li>
+              <li>.${sult[0].name}</li>
+              <li>.${sult[1].name}</li>
               <li>-</li>
             </ol>
           </div> 
         </div>  
-         `
+         `;
          }
        }   
        
@@ -79,7 +84,7 @@ const orgs =  document.getElementById('organisations');
             <p>Type: Github user is not activated(no repos)</p>
           </div> 
         </div>  
-         `
+         `;
        }    
           
     }
