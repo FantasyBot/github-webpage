@@ -20,7 +20,7 @@ let colectArr = [];
         return dateA - dateB;
       });
 
-       output.innerHTML += `
+       output.innerHTML = `
         <div class="divWrap" id="togle"> 
           <div class="wrap">  
             <img src="${sult[0].owner.avatar_url}" alt="avatar">
