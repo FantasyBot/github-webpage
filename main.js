@@ -20,7 +20,7 @@ let colectArr = [];
         return dateA - dateB;
       });
 
-       output.innerHTML = `
+       output.innerHTML += `
         <div class="divWrap" id="togle"> 
           <div class="wrap">  
             <img src="${sult[0].owner.avatar_url}" alt="avatar">
@@ -31,7 +31,7 @@ let colectArr = [];
             <h4>First three ropo names:</h4>
             <ol class="repositories"> 
               <li>.${sult[0].name}</li>
-              <li>.${sult[1].name}</li>
+              <li>-</li>
               <li>-</li>
             </ol>
           </div> 
