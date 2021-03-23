@@ -3,7 +3,7 @@ let colectArr = [];
 
   const getRepos = async function () {
   //get most rated repositories in github
-  const response = await fetch('https://api.github.com/search/repositories?q=stars:>165000');
+  const response = await fetch('https://api.github.com/search/repositories?q=stars:>180000');
   const result = await response.json();
    
   let smt = result.items;
